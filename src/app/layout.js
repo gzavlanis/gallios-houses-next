@@ -4,7 +4,6 @@ export const metadata = {
     title: 'Gallios Houses | Luxury Retreats in Rethymno',
     description: 'Experience authentic Cretan hospitality in our luxury apartments near Rethymno.',
     icons: {
-        // This sets your logo as the favicon in the browser tab
         icon: '/assets/images/whatsapp-image-2023-12-27-at-08.44.38-removebg-192x144.png',
     },
 };
@@ -13,7 +12,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
         <head>
-            {/* Load Modern Fonts: Playfair Display (Headings) & Lato (Body) */}
+            {/* ONLY load Google Fonts here. No local CSS files! */}
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
             <link

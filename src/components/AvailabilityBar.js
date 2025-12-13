@@ -1,53 +1,47 @@
-import Link from 'next/link';
+import AvailabilityBar from './AvailabilityBar';
 
-export default function AvailabilityBar() {
+export default function Hero() {
     return (
-        <div className="glass-bar">
+        <header style={{
+            height: '100vh',
+            backgroundImage: 'url("/assets/images/collage2-2000x1050.jpeg")',
+            backgroundAttachment: 'fixed',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }}>
+            {/* Overlay */}
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6))' }}></div>
 
-            {/* Check In */}
-            <div className="search-field">
-                <label className="search-label">Check In</label>
-                <input
-                    type="date"
-                    className="search-input"
-                    lang="en-US" // Hints browser to use English format
-                    placeholder="dd/mm/yyyy"
-                />
+            {/* Main Text Content */}
+            <div className="container text-center" style={{ position: 'relative', zIndex: 2, color: 'white', marginTop: '-50px' }}>
+                <p style={{
+                    letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '15px',
+                    fontSize: '13px', fontWeight: '600', textShadow: '0 2px 4px rgba(0,0,0,0.5)'
+                }}>
+                    GALLIOS HOUSES
+                </p>
+
+                <h1 style={{
+                    fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '30px',
+                    fontFamily: 'var(--font-heading)', fontWeight: '400', fontStyle: 'italic',
+                    lineHeight: '1.2', color: '#ffffff', textShadow: '0 2px 10px rgba(0,0,0,0.5)'
+                }}>
+                    A Lifetime Experience
+                </h1>
+
+                <div style={{ width: '60px', height: '1px', background: '#fff', margin: '0 auto', opacity: 0.8 }}></div>
             </div>
 
-            {/* Check Out */}
-            <div className="search-field">
-                <label className="search-label">Check Out</label>
-                <input
-                    type="date"
-                    className="search-input"
-                    lang="en-US"
-                    placeholder="dd/mm/yyyy"
-                />
+            {/* UPDATED: Uses CSS class for responsive positioning */}
+            <div className="hero-bar-container">
+                <AvailabilityBar />
             </div>
 
-            {/* Guests */}
-            <div className="search-field">
-                <label className="search-label">Guests</label>
-                <select className="search-input" style={{ color: '#333' }}>
-                    <option value="2">2 Guests</option>
-                    <option value="3">3 Guests</option>
-                    <option value="4">4 Guests</option>
-                    <option value="5">5 Guests</option>
-                    <option value="6">6 Guests</option>
-                </select>
-            </div>
-
-            {/* Search Button */}
-            <Link href="/availability" className="btn btn-primary" style={{
-                padding: '12px 30px',
-                fontSize: '12px',
-                marginBottom: '2px',
-                border: 'none'
-            }}>
-                CHECK AVAILABILITY
-            </Link>
-
-        </div>
+        </header>
     );
 }

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+    // We are removing the experimental block to fix the crash
 };
 
 export default nextConfig;
