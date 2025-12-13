@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // We are removing the experimental block to fix the crash
+    // This forces the site to be just HTML/CSS/JS (no heavy server processing)
+    output: 'export',
+
+    // This stops the Image Optimizer from hanging your computer
+    images: {
+        unoptimized: true,
+    },
 };
 
 export default nextConfig;
