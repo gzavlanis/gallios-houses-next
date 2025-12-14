@@ -81,7 +81,7 @@ ul { list-style: none; }
 .search-label { display: block; color: #005777; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 5px; }
 .search-input { background: transparent; border: none; border-bottom: 2px solid rgba(0, 87, 119, 0.3); color: #333; font-family: var(--font-body); font-size: 15px; font-weight: 600; padding: 10px 5px; width: 160px; outline: none; cursor: pointer; transition: all 0.3s; border-radius: 0; }
 .search-input:focus { border-bottom-color: #005777; background: rgba(255,255,255,0.5); }
-.hero-bar-container { position: absolute; bottom: 80px; width: 100%; display: flex; justifyContent: center; z-index: 10; padding: 0 20px; }
+.hero-bar-container { position: absolute; bottom: 80px; width: 100%; display: flex; justify-content: center; z-index: 10; padding: 0 20px; }
 @media (max-width: 992px) {
     .hero-bar-container { bottom: 30px; }
     .glass-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; max-width: 400px; padding: 20px; background: rgba(255, 255, 255, 0.95); border-radius: 15px; }
@@ -98,3 +98,120 @@ ul { list-style: none; }
 .geo-watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.03; pointer-events: none; }
 .btn-outline-white { border: 1px solid rgba(255,255,255,0.6); color: white; padding: 15px 45px; text-transform: uppercase; letter-spacing: 2px; fontSize: 12px; fontWeight: bold; margin-top: 30px; display: inline-block; transition: all 0.3s ease; }
 .btn-outline-white:hover { background: white; color: var(--primary); border-color: white; transform: translateY(-3px); }
+
+/* --- COMPONENT SPECIFIC STYLES (Moved from JSX) --- */
+
+/* Houses Section Mobile Fixes */
+@media (max-width: 992px) {
+    .house-img-wrap {
+        flex: 0 0 100% !important;
+        height: 350px !important;
+    }
+    .house-content-wrap {
+        flex: 0 0 90% !important;
+        margin: -50px auto 0 !important;
+        padding: 30px !important;
+    }
+}
+
+/* Info Icons / Amenities Hover Effects */
+.amenity-card .amenity-overlay {
+    background: rgba(0, 87, 119, 0.85);
+    transition: background 0.5s ease;
+}
+.amenity-card:hover .amenity-overlay {
+    background: rgba(0, 87, 119, 0.2); /* Fades out */
+}
+.amenity-card .amenity-image {
+    transition: transform 0.8s ease;
+}
+.amenity-card:hover .amenity-image {
+    transform: scale(1.15); /* Zooms in */
+}
+
+/* Contact Section Mobile Fixes */
+@media (max-width: 992px) {
+    .contact-card {
+        flex: 0 0 90% !important;
+        margin: -50px auto 0 !important;
+    }
+    .contact-map {
+        flex: 0 0 100% !important;
+        height: 350px !important;
+        margin-left: 0 !important;
+        order: -1; /* Puts map on top */
+    }
+}
+
+/* Hover Card Effect (Used in Facilities) */
+.hover-card {
+    transition: transform 0.3s ease;
+}
+.hover-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- NEW STYLES FOR HOUSE PAGES --- */
+
+/* Split Screen Layout (Text + Tall Image) */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.split-text {
+    padding: 40px;
+}
+
+/* A tall, elegant image container */
+.tall-image-container {
+    height: 700px; /* Fixed height for drama */
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+/* Stylish Pull Quote block */
+.quote-block {
+    border-left: 3px solid var(--secondary);
+    padding-left: 30px;
+    margin: 30px 0;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #555;
+    font-family: var(--font-heading);
+}
+
+/* Cleaner, Floating Amenity Card */
+.amenity-float {
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    /* No background or shadow by default for a cleaner look */
+}
+.amenity-float:hover {
+    transform: translateY(-5px);
+}
+.amenity-float h4 {
+    font-size: 1rem;
+    margin-top: 15px;
+    color: var(--primary);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+    .split-layout {
+        grid-template-columns: 1fr; /* Stack vertically on mobile */
+        gap: 30px;
+    }
+    .tall-image-container {
+        height: 400px; /* Shorter on mobile */
+        order: -1; /* Put image on top of text on mobile */
+    }
+    .split-text {
+        padding: 20px 0;
+    }
+}
