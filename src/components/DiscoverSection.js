@@ -1,57 +1,36 @@
 import Link from 'next/link';
-import { FaMapMarkedAlt, FaCompass } from 'react-icons/fa';
+import Icon from './Icons';
 
 export default function DiscoverSection() {
     return (
         <section className="discover-geo-section">
 
-            {/* --- BACKGROUND SHAPES (No Images!) --- */}
+            {/* Decorative Background Shapes */}
             <div className="geo-shape-circle shape-gold-ring"></div>
             <div className="geo-shape-circle shape-white-blob"></div>
 
-            {/* Giant Watermark Icon behind text */}
+            {/* Giant Watermark Icon */}
             <div className="geo-watermark">
-                <FaCompass />
+                <Icon name="compass" size={300} />
             </div>
 
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
 
-                {/* Decorative Top Icon */}
-                <div style={{ marginBottom: '20px', color: '#cba135' }}>
-                    <FaMapMarkedAlt size={40} />
+                <div style={{ marginBottom: '20px', color: '#cba135', display: 'flex', justifyContent: 'center' }}>
+                    <Icon name="mapMarked" size={40} color="#cba135" />
                 </div>
 
-                <span style={{
-                    color: '#cba135', // Gold Accent
-                    textTransform: 'uppercase',
-                    letterSpacing: '4px',
-                    fontSize: '12px',
-                    fontWeight: 'bold',
-                    display: 'block',
-                    marginBottom: '20px'
-                }}>
+                <span style={{ color: '#cba135', textTransform: 'uppercase', letterSpacing: '4px', fontSize: '12px', fontWeight: 'bold', display: 'block', marginBottom: '20px' }}>
           Explore Crete
         </span>
 
-                <h2 style={{
-                    fontSize: '3.5rem',
-                    fontFamily: 'var(--font-heading)',
-                    marginBottom: '30px',
-                    color: '#fff'
-                }}>
+                <h2 style={{ fontSize: '3.5rem', fontFamily: 'var(--font-heading)', marginBottom: '30px', color: '#fff' }}>
                     The Perfect Base
                 </h2>
 
                 <div style={{ width: '60px', height: '1px', background: 'rgba(255,255,255,0.3)', margin: '0 auto 30px' }}></div>
 
-                <p style={{
-                    fontSize: '1.2rem',
-                    lineHeight: '1.8',
-                    maxWidth: '600px',
-                    margin: '0 auto',
-                    color: 'rgba(255,255,255,0.9)',
-                    fontWeight: '300'
-                }}>
+                <p style={{ fontSize: '1.2rem', lineHeight: '1.8', maxWidth: '600px', margin: '0 auto', color: 'rgba(255,255,255,0.9)', fontWeight: '300' }}>
                     Strategically located in the peaceful village of Loutra, just 15 minutes from the vibrant Rethymno city.
                     Your gateway to the hidden gems of the island.
                 </p>
