@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // This forces the site to be just HTML/CSS/JS (no heavy server processing)
+    // Static Export for a fast, simple site
     output: 'export',
 
-    // This stops the Image Optimizer from hanging your computer
+    // Disable heavy image processing to save memory
     images: {
         unoptimized: true,
     },
