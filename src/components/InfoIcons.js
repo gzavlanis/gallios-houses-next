@@ -1,27 +1,43 @@
+"use client";
+import Reveal from './Reveal';
 import Icon from './Icons';
 
-export default function InfoIcons() {
+export default function InfoIcons({ dict }) {
+    const t = dict?.home?.features || {
+        city: "City Life", city_sub: "RETHYMNO TOWN", city_text: "Easy access to the city...",
+        beach: "Heavenly Beaches", beach_sub: "CRYSTAL WATERS", beach_text: "Discover hidden secrets...",
+        culture: "Culture & History", culture_sub: "ANCIENT CRETE", culture_text: "Visit historical sites..."
+    };
+
     const items = [
-        { title: "Near Beach", icon: "beach", img: "/assets/images/psx-20220808-133623-1140x641.jpeg" },
-        { title: "Spacious Apartments", icon: "home", img: "/assets/images/loutra-resort-b2-19-1140x766.jpeg" },
-        { title: "Family Friendly", icon: "users", img: "/assets/images/loutra-resort-b2-32-2000x1335.jpeg" },
-        { title: "Solar Heated Water", icon: "sun", img: "/assets/images/loutra-resort-b2-29-1500x1000.jpeg" },
+        { icon: "city", title: t.city, sub: t.city_sub, text: t.city_text },
+        { icon: "beach", title: t.beach, sub: t.beach_sub, text: t.beach_text },
+        { icon: "culture", title: t.culture, sub: t.culture_sub, text: t.culture_text },
     ];
 
     return (
-        <section>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-                {items.map((item, index) => (
-                    <div key={index} style={{ position: 'relative', height: '400px', overflow: 'hidden', cursor: 'pointer' }} className="amenity-card">
-                        <img src={item.img} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="amenity-image" />
-                        <div style={{ position: 'absolute', inset: 0, zIndex: 1 }} className="amenity-overlay"></div>
-                        <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: 2, color: 'white' }}>
-                            <Icon name={item.icon} size={50} color="white" />
-                            <h4 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginTop: '15px', color: 'white' }}>{item.title}</h4>
-                            <div style={{ width: '40px', height: '2px', background: '#cba135', marginTop: '15px' }}></div>
-                        </div>
-                    </div>
-                ))}
+        <section className="section-padding" style={{ background: 'white' }}>
+            <div className="container">
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '50px' }}>
+                    {items.map((item, index) => (
+                        <Reveal key={index} delay={index * 0.2}>
+                            <div className="amenity-card" style={{ textAlign: 'center', padding: '20px' }}>
+                                <div style={{ color: '#cba135', marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
+                                    <Icon name={item.icon} size={50} />
+                                </div>
+                                <span style={{ display: 'block', fontSize: '11px', fontWeight: 'bold', letterSpacing: '2px', color: '#999', marginBottom: '10px' }}>
+                  {item.sub}
+                </span>
+                                <h3 style={{ fontSize: '1.8rem', color: '#005777', marginBottom: '15px', fontFamily: 'var(--font-heading)' }}>
+                                    {item.title}
+                                </h3>
+                                <p style={{ color: '#666', lineHeight: '1.8' }}>
+                                    {item.text}
+                                </p>
+                            </div>
+                        </Reveal>
+                    ))}
+                </div>
             </div>
         </section>
     );

@@ -1,35 +1,35 @@
-// A lightweight, horizontal scrolling slider
+"use client";
+import { useRef } from 'react';
+import Icon from './Icons';
+
 export default function ImageSlider({ images }) {
+    const scrollRef = useRef(null);
+
+    const scroll = (direction) => {
+        if (scrollRef.current) {
+            const { current } = scrollRef;
+            const scrollAmount = current.clientWidth;
+            current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+        }
+    };
+
     return (
-        <div style={{
-            display: 'flex',
-            overflowX: 'auto',
-            scrollSnapType: 'x mandatory',
-            gap: '10px',
-            paddingBottom: '20px', // space for scrollbar
-            scrollbarWidth: 'none' // Hide scrollbar Firefox
-        }} className="hide-scroll">
+        <div className="slider-container">
+            <button className="slider-nav-btn slider-left" onClick={() => scroll('left')}>
+                <Icon name="chevronDown" size={24} style={{ transform: 'rotate(90deg)' }} />
+            </button>
 
-            {images.map((src, index) => (
-                <div key={index} style={{
-                    flex: '0 0 85%', // Shows part of next image to encourage scroll
-                    height: '400px',
-                    scrollSnapAlign: 'center',
-                    borderRadius: '4px',
-                    overflow: 'hidden'
-                }}>
-                    <img
-                        src={src}
-                        alt="Slide"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                </div>
-            ))}
+            <div className="slider-track" ref={scrollRef}>
+                {images.map((src, i) => (
+                    <div key={i} className="slide">
+                        <img src={src} alt={`Slide ${i}`} />
+                    </div>
+                ))}
+            </div>
 
-            {/* Hide Scrollbar Style for Chrome/Safari */}
-            <style jsx>{`
-        .hide-scroll::-webkit-scrollbar { display: none; }
-      `}</style>
+            <button className="slider-nav-btn slider-right" onClick={() => scroll('right')}>
+                <Icon name="chevronDown" size={24} style={{ transform: 'rotate(-90deg)' }} />
+            </button>
         </div>
     );
 }

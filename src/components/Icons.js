@@ -45,7 +45,54 @@ export default function Icon({ name, size = 24, color = "currentColor", classNam
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
             </g>
         ),
-        airbnb: <path d="M12 3C6.5 3 2 8 2 13c0 3.5 2.5 6.5 6 8l4-2 4 2c3.5-1.5 6-4.5 6-8 0-5-4.5-10-10-10z"/>
+        airbnb: <path d="M12 3C6.5 3 2 8 2 13c0 3.5 2.5 6.5 6 8l4-2 4 2c3.5-1.5 6-4.5 6-8 0-5-4.5-10-10-10z"/>,
+
+        flag_el: (
+            <g>
+                <circle cx="12" cy="12" r="10" fill="#005777"/>
+                <path d="M4 12h16 M12 4v16" stroke="white" strokeWidth="2"/>
+                <path d="M4 8h5 M4 16h5" stroke="white" strokeWidth="2"/>
+            </g>
+        ),
+        flag_en: (
+            <g>
+                <circle cx="12" cy="12" r="10" fill="#00247d"/>
+                <path d="M4 4l16 16M20 4L4 20" stroke="white" strokeWidth="2"/>
+                <path d="M4 4l16 16M20 4L4 20" stroke="#cf142b" strokeWidth="1"/>
+                <path d="M12 2v20M2 12h20" stroke="white" strokeWidth="4"/>
+                <path d="M12 2v20M2 12h20" stroke="#cf142b" strokeWidth="2"/>
+            </g>
+        ),
+        flag_fr: (
+            <g>
+                <defs><clipPath id="circle"><circle cx="12" cy="12" r="10"/></clipPath></defs>
+                <g clipPath="url(#circle)">
+                    <rect x="2" y="2" width="6.6" height="20" fill="#002395"/>
+                    <rect x="8.6" y="2" width="6.6" height="20" fill="white"/>
+                    <rect x="15.2" y="2" width="6.8" height="20" fill="#ed2939"/>
+                </g>
+            </g>
+        ),
+        flag_de: (
+            <g>
+                <defs><clipPath id="circleDe"><circle cx="12" cy="12" r="10"/></clipPath></defs>
+                <g clipPath="url(#circleDe)">
+                    <rect x="2" y="2" width="20" height="6.6" fill="#000000"/>
+                    <rect x="2" y="8.6" width="20" height="6.6" fill="#dd0000"/>
+                    <rect x="2" y="15.2" width="20" height="6.8" fill="#ffce00"/>
+                </g>
+            </g>
+        ),
+        flag_it: (
+            <g>
+                <defs><clipPath id="circleIt"><circle cx="12" cy="12" r="10"/></clipPath></defs>
+                <g clipPath="url(#circleIt)">
+                    <rect x="2" y="2" width="6.6" height="20" fill="#009246"/>
+                    <rect x="8.6" y="2" width="6.6" height="20" fill="white"/>
+                    <rect x="15.2" y="2" width="6.8" height="20" fill="#ce2b37"/>
+                </g>
+            </g>
+        ),
     };
 
     const path = icons[name];

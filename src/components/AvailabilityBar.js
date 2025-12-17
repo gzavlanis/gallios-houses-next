@@ -1,26 +1,34 @@
-import Link from 'next/link';
-export default function AvailabilityBar() {
+"use client";
+import { useState } from 'react';
+
+export default function AvailabilityBar({ dict }) {
+    const t = dict?.booking?.labels || {
+        arrival: "Check In", departure: "Check Out", adults: "Guests", btn: "CHECK"
+    };
+
     return (
         <div className="glass-bar">
             <div className="search-field">
-                <label className="search-label">Check In</label>
+                <label className="search-label">{t.arrival}</label>
                 <input type="date" className="search-input" />
             </div>
             <div className="search-field">
-                <label className="search-label">Check Out</label>
+                <label className="search-label">{t.departure}</label>
                 <input type="date" className="search-input" />
             </div>
             <div className="search-field">
-                <label className="search-label">Guests</label>
+                <label className="search-label">{t.adults}</label>
                 <select className="search-input">
-                    <option>2 Guests</option>
-                    <option>3 Guests</option>
-                    <option>4 Guests</option>
-                    <option>5 Guests</option>
-                    <option>6 Guests</option>
+                    <option>2 Adults</option>
+                    <option>3 Adults</option>
+                    <option>4 Adults</option>
+                    <option>5 Adults</option>
+                    <option>6 Adults</option>
                 </select>
             </div>
-            <Link href="/availability" className="btn btn-primary" style={{ border: 'none' }}>CHECK AVAILABILITY</Link>
+            <button className="btn btn-primary" style={{ height: '45px', padding: '0 30px' }}>
+                {t.btn}
+            </button>
         </div>
     );
 }

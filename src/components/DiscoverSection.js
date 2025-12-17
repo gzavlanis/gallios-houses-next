@@ -1,43 +1,74 @@
+"use client";
+import { useRef } from 'react';
 import Link from 'next/link';
-import Icon from './Icons';
+import Reveal from './Reveal';
+import { useScroll, useTransform, motion } from 'framer-motion';
 
-export default function DiscoverSection() {
+export default function DiscoverSection({ dict, lang }) {
+    const currentLang = lang || 'el';
+    const t = dict?.home?.features || {};
+
+    // Parallax Logic for the Watermark
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "end start"]
+    });
+
+    // Move the watermark slightly vertically based on scroll
+    const y = useTransform(scrollYProgress, [0, 1], [-50, 50]);
+
     return (
-        <section className="discover-geo-section">
+        <section ref={ref} className="discover-geo-section" style={{ overflow: 'hidden' }}>
 
-            {/* Decorative Background Shapes */}
-            <div className="geo-shape-circle shape-gold-ring"></div>
-            <div className="geo-shape-circle shape-white-blob"></div>
+            {/* Animated Background Elements */}
+            <div className="geo-shape-circle shape-gold-ring animate-spin-slow"></div>
+            <div className="geo-shape-circle shape-white-blob animate-float"></div>
 
-            {/* Giant Watermark Icon */}
-            <div className="geo-watermark">
-                <Icon name="compass" size={300} />
-            </div>
+            {/* Parallax Watermark */}
+            <motion.h1 style={{ y }} className="geo-watermark">
+                LOUTRA
+            </motion.h1>
 
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+                <Reveal>
+          <span style={{
+              display: 'block',
+              letterSpacing: '6px',
+              textTransform: 'uppercase',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              color: 'rgba(255,255,255,0.8)',
+              marginBottom: '15px'
+          }}>
+            {t.culture_sub || "AUTHENTIC CRETE"}
+          </span>
 
-                <div style={{ marginBottom: '20px', color: '#cba135', display: 'flex', justifyContent: 'center' }}>
-                    <Icon name="mapMarked" size={40} color="#cba135" />
-                </div>
+                    <h2 style={{
+                        fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                        fontFamily: 'var(--font-heading)',
+                        margin: '0 0 30px',
+                        lineHeight: '1.1'
+                    }}>
+                        Discover Loutra Village
+                    </h2>
 
-                <span style={{ color: '#cba135', textTransform: 'uppercase', letterSpacing: '4px', fontSize: '12px', fontWeight: 'bold', display: 'block', marginBottom: '20px' }}>
-          Explore Crete
-        </span>
+                    <p style={{
+                        maxWidth: '600px',
+                        margin: '0 auto 40px',
+                        fontSize: '1.2rem',
+                        opacity: 0.9,
+                        lineHeight: '1.8',
+                        fontWeight: '300'
+                    }}>
+                        {t.culture_text}
+                    </p>
 
-                <h2 style={{ fontSize: '3.5rem', fontFamily: 'var(--font-heading)', marginBottom: '30px', color: '#fff' }}>
-                    The Perfect Base
-                </h2>
-
-                <div style={{ width: '60px', height: '1px', background: 'rgba(255,255,255,0.3)', margin: '0 auto 30px' }}></div>
-
-                <p style={{ fontSize: '1.2rem', lineHeight: '1.8', maxWidth: '600px', margin: '0 auto', color: 'rgba(255,255,255,0.9)', fontWeight: '300' }}>
-                    Strategically located in the peaceful village of Loutra, just 15 minutes from the vibrant Rethymno city.
-                    Your gateway to the hidden gems of the island.
-                </p>
-
-                <Link href="/location" className="btn-outline-white">
-                    Discover the Area
-                </Link>
+                    {/* FIXED LINK */}
+                    <Link href={`/${currentLang}/location`} className="btn-outline-white">
+                        {t.explore || "EXPLORE"}
+                    </Link>
+                </Reveal>
             </div>
         </section>
     );
