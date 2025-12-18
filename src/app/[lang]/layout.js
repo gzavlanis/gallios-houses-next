@@ -1,5 +1,6 @@
 import '../globals.css';
 import { Lato, Playfair_Display } from 'next/font/google';
+import {getDictionary} from "@/dictionaries/get-dictionary";
 
 const lato = Lato({
     subsets: ['latin'],
