@@ -2,15 +2,16 @@
 import Icon from './Icons';
 
 export default function BookingPerks({ dict }) {
-    // Fallbacks in case dictionary keys are missing
-    const t = dict?.booking || {
-        perks_title: "Why Book Direct?",
-        perks_1_title: "Best Rates Guaranteed",
-        perks_1_desc: "We match any lower price found online.",
-        perks_2_title: "No Hidden Fees",
-        perks_2_desc: "Transparent pricing with no surprise charges.",
-        perks_3_title: "Personalized Guide",
-        perks_3_desc: "Receive our curated guide to Rethymno upon booking."
+    // Safely access the booking section, or default to empty object
+    const t = dict?.booking || {};
+    const content = {
+        title: t.perks_title || "Why Book Direct?",
+        p1_title: t.perks_1_title || "Best Rates Guaranteed",
+        p1_desc: t.perks_1_desc || "We match any lower price found online.",
+        p2_title: t.perks_2_title || "No Hidden Fees",
+        p2_desc: t.perks_2_desc || "Transparent pricing with no surprise charges.",
+        p3_title: t.perks_3_title || "Personalized Guide",
+        p3_desc: t.perks_3_desc || "Receive our curated guide to Rethymno upon booking."
     };
 
     return (
@@ -23,13 +24,13 @@ export default function BookingPerks({ dict }) {
                 borderBottom: '1px solid #eee',
                 paddingBottom: '15px'
             }}>
-                {t.perks_title}
+                {content.title}
             </h4>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                <PerkItem icon="star" title={t.perks_1_title} desc={t.perks_1_desc} />
-                <PerkItem icon="shield" title={t.perks_2_title} desc={t.perks_2_desc} /> {/* Using shield or similar */}
-                <PerkItem icon="globe" title={t.perks_3_title} desc={t.perks_3_desc} />
+                <PerkItem icon="star" title={content.p1_title} desc={content.p1_desc} />
+                <PerkItem icon="shield" title={content.p2_title} desc={content.p2_desc} />
+                <PerkItem icon="globe" title={content.p3_title} desc={content.p3_desc} />
             </div>
         </div>
     );

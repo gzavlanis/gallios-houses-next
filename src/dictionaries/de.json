@@ -129,7 +129,6 @@
     "hero_sub": "VERFÜGBARKEIT & ANFRAGEN",
     "gateway_title": "Live-Verfügbarkeit Prüfen",
     "gateway_text": "Wählen Sie Ihr bevorzugtes Haus, um Echtzeit-Daten und Preise auf unseren Partnerplattformen anzuzeigen.",
-    "perks_title": "Sichere Reservierung",
     "form_title": "Haben Sie spezielle Anforderungen?",
     "form_text": "Senden Sie uns eine direkte Nachricht für individuelle Angebote, Langzeitaufenthalte oder allgemeine Anfragen.",
     "faq_title": "Häufig Gestellte Fragen",
@@ -141,7 +140,14 @@
       "name": "Vollständiger Name",
       "requests": "Sonderwünsche",
       "btn": "ANFRAGE SENDEN"
-    }
+    },
+    "perks_title": "Warum direkt buchen?",
+    "perks_1_title": "Bestpreisgarantie",
+    "perks_1_desc": "Wir passen uns jedem günstigeren Online-Preis an.",
+    "perks_2_title": "Keine versteckten Gebühren",
+    "perks_2_desc": "Transparente Preise ohne Überraschungen.",
+    "perks_3_title": "Persönlicher Reiseführer",
+    "perks_3_desc": "Erhalten Sie bei Buchung unseren kuratierten Rethymno-Guide."
   },
   "amenities": {
     "users": "Gäste",
@@ -159,5 +165,9 @@
     "hottub": "Privater Whirlpool",
     "bbq": "Grillmöglichkeiten",
     "ac": "Klimaanlage"
+  },
+  "meta": {
+    "title": "Gallios Houses | Luxusurlaub in Loutra",
+    "description": "Erleben Sie authentische kretische Gastfreundschaft in unseren Luxusvillen."
   }
 }

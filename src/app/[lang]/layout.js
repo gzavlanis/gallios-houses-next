@@ -13,10 +13,28 @@ const playfair = Playfair_Display({
     variable: '--font-heading'
 });
 
-export const metadata = {
-    title: 'Gallios Houses | Luxury Retreat in Loutra',
-    description: 'Experience authentic Cretan hospitality.',
-};
+export async function generateMetadata({ params }) {
+    const { lang } = await params;
+    const dict = await getDictionary(lang);
+
+    return {
+        title: dict.meta.title,
+        description: dict.meta.description,
+        icons: {
+            icon: '/icon.png',
+            shortcut: '/icon.png',
+            apple: '/icon.png',
+        },
+        // Optional: Open Graph for better sharing on Facebook/WhatsApp
+        openGraph: {
+            title: dict.meta.title,
+            description: dict.meta.description,
+            siteName: 'Gallios Houses',
+            locale: lang,
+            type: 'website',
+        },
+    };
+}
 
 export default async function RootLayout({ children, params }) {
     const { lang } = await params;

@@ -129,7 +129,6 @@
     "hero_sub": "DISPONIBILITÀ E RICHIESTE",
     "gateway_title": "Controlla Disponibilità",
     "gateway_text": "Seleziona la tua casa preferita per vedere date e prezzi in tempo reale sulle nostre piattaforme partner.",
-    "perks_title": "Prenotazione Sicura",
     "form_title": "Hai Richieste Speciali?",
     "form_text": "Inviaci un messaggio diretto per preventivi personalizzati, soggiorni lunghi o domande generali.",
     "faq_title": "Domande Frequenti",
@@ -141,7 +140,14 @@
       "name": "Nome Completo",
       "requests": "Richieste Speciali",
       "btn": "INVIA RICHIESTA"
-    }
+    },
+    "perks_title": "Perché prenotare direttamente?",
+    "perks_1_title": "Miglior Prezzo Garantito",
+    "perks_1_desc": "Eguagliamo qualsiasi prezzo inferiore trovato online.",
+    "perks_2_title": "Nessuna commissione nascosta",
+    "perks_2_desc": "Prezzi trasparenti senza costi a sorpresa.",
+    "perks_3_title": "Guida Personalizzata",
+    "perks_3_desc": "Ricevi la nostra guida di Rethymno al momento della prenotazione."
   },
   "amenities": {
     "users": "Ospiti",
@@ -159,5 +165,9 @@
     "hottub": "Idromassaggio Privato",
     "bbq": "Barbecue",
     "ac": "Aria Condizionata"
+  },
+  "meta": {
+    "title": "Gallios Houses | Rifugio di Lusso a Loutra",
+    "description": "Vivi l'autentica ospitalità cretese nelle nostre ville di lusso."
   }
 }

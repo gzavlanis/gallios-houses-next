@@ -149,7 +149,6 @@
     "hero_sub": "AVAILABILITY & INQUIRIES",
     "gateway_title": "Check Live Availability",
     "gateway_text": "Select your preferred house to view real-time dates and prices on our partner platforms.",
-    "perks_title": "Secure Reservation",
     "form_title": "Have Special Requirements?",
     "form_text": "Send us a direct message for custom quotes, long stays, or general inquiries.",
     "faq_title": "Frequently Asked Questions",
@@ -161,7 +160,14 @@
       "name": "Full Name",
       "requests": "Special Requests",
       "btn": "SEND REQUEST"
-    }
+    },
+    "perks_title": "Why Book Direct?",
+    "perks_1_title": "Best Rates Guaranteed",
+    "perks_1_desc": "We match any lower price found online.",
+    "perks_2_title": "No Hidden Fees",
+    "perks_2_desc": "Transparent pricing with no surprise charges.",
+    "perks_3_title": "Personalized Guide",
+    "perks_3_desc": "Receive our curated guide to Rethymno upon booking."
   },
   "amenities": {
     "users": "Guests",
@@ -179,5 +185,9 @@
     "hottub": "Private Hot Tub",
     "bbq": "BBQ Facilities",
     "ac": "Air Conditioning"
+  },
+  "meta": {
+    "title": "Gallios Houses | Luxury Retreat in Loutra",
+    "description": "Experience authentic Cretan hospitality in our luxury villas."
   }
 }

@@ -129,7 +129,6 @@
     "hero_sub": "DISPONIBILITÉ & DEMANDES",
     "gateway_title": "Vérifier la Disponibilité",
     "gateway_text": "Sélectionnez votre maison préférée pour voir les dates et prix en temps réel sur nos plateformes partenaires.",
-    "perks_title": "Réservation Sécurisée",
     "form_title": "Des Demandes Spéciales ?",
     "form_text": "Envoyez-nous un message direct pour des devis personnalisés, des longs séjours ou des questions générales.",
     "faq_title": "Questions Fréquentes",
@@ -141,7 +140,14 @@
       "name": "Nom Complet",
       "requests": "Demandes Spéciales",
       "btn": "ENVOYER LA DEMANDE"
-    }
+    },
+    "perks_title": "Pourquoi réserver en direct ?",
+    "perks_1_title": "Meilleur tarif garanti",
+    "perks_1_desc": "Nous nous alignons sur tout prix inférieur trouvé en ligne.",
+    "perks_2_title": "Pas de frais cachés",
+    "perks_2_desc": "Une tarification transparente sans surprise.",
+    "perks_3_title": "Guide Personnalisé",
+    "perks_3_desc": "Recevez notre guide de Réthymnon lors de la réservation."
   },
   "amenities": {
     "users": "Invités",
@@ -159,5 +165,9 @@
     "hottub": "Jacuzzi Privé",
     "bbq": "Installations BBQ",
     "ac": "Climatisation"
+  },
+  "meta": {
+    "title": "Gallios Houses | Retraite de Luxe à Loutra",
+    "description": "Découvrez l'authenticité de l'hospitalité crétoise dans nos villas de luxe."
   }
 }
