@@ -122,7 +122,27 @@
     "explore_title": "Geschichte & Natur",
     "explore_sub": "ERKUNDEN",
     "cta_title": "Beginnen Sie Ihre Reise",
-    "cta_text": "Erleben Sie die authentische Seite Kretas bequem von den Gallios Houses aus."
+    "cta_text": "Erleben Sie die authentische Seite Kretas bequem von den Gallios Houses aus.",
+    "places": {
+      "agrimia": "Authentische kretische Küche im Herzen der Altstadt.",
+      "arokaria": "Eine schöne Taverne mit Live-Musik und traditionellen Gerichten.",
+      "bakalogatos": "Ein lokaler Favorit für frische Meeresfrüchte und Ouzo.",
+      "galera": "Hervorragende Fischgerichte mit Blick auf das Meer.",
+      "nafpigio": "Moderne Cocktails und Fusionsküche.",
+      "paprika": "Beliebtes Grillhaus, bekannt für sein Fleisch.",
+      "pigadi": "Feines Essen in einem romantischen venezianischen Innenhof.",
+      "thraka": "Der beste Ort für Souvlaki und Gyros.",
+      "tsoukali": "Hausgemachte Gerichte wie bei Oma.",
+      "baya": "Lebhafter Beach Club mit DJs und Cocktails.",
+      "baraki": "Gemütliches Rakadiko für entspannte Abende.",
+      "nuvel": "Moderne Bar mit toller Atmosphäre.",
+      "arkadi": "Das historische Kloster Arkadi, Symbol der Freiheit.",
+      "fortezza": "Die venezianische Festung über Rethymno.",
+      "eleutherna": "Antikes Museum und archäologische Stätte.",
+      "melidoni": "Historische Höhle mit beeindruckenden Formationen.",
+      "psiloritis": "Der höchste Berg Kretas (Ida-Gebirge).",
+      "episkopi": "Langer Sandstrand mit kristallklarem Wasser."
+    }
   },
   "booking": {
     "hero_title": "PLANEN SIE IHREN AUFENTHALT",

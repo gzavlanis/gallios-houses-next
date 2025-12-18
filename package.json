@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -H 0.0.0.0",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start -H 0.0.0.0",
-    "lint": "eslint"
+    "start": "node server.js"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.7.0",
