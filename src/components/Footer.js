@@ -1,9 +1,11 @@
 "use client";
 import { useState } from 'react';
 import Icon from './Icons';
+import moment from 'moment';
 
 export default function Footer({ dict }) {
     const [email, setEmail] = useState('');
+    const currentYear = moment().year();
     const t = dict?.footer || {
         email_title: "E-Mail",
         email_sub: "24/7",
@@ -13,7 +15,7 @@ export default function Footer({ dict }) {
         newsletter_sub: "SIGN UP",
         placeholder: "E-mail",
         join: "JOIN",
-        copyright: "© 2024"
+        copyright: `© ${moment().year}`
     };
 
     // Shared style for all social buttons
@@ -89,7 +91,7 @@ export default function Footer({ dict }) {
                 </div>
 
                 <div style={{ marginTop: '80px', paddingTop: '30px', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', opacity: 0.6, fontSize: '13px' }}>
-                    <p>{t.copyright}</p>
+                    <p>&copy; {currentYear} Gallios Houses. All rights reserved.</p>
                 </div>
             </div>
         </footer>

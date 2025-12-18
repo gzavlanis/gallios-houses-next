@@ -2,6 +2,17 @@
 import Link from 'next/link';
 import Reveal from './Reveal';
 
+// FIX: Define this subcomponent OUTSIDE the main function
+const GoldBar = () => (
+    <div style={{
+        width: '60px',
+        height: '3px',
+        background: '#cba135',
+        marginTop: '5px',
+        marginBottom: '25px'
+    }}></div>
+);
+
 export default function HousesSection({ dict, lang }) {
     // 1. Get current language (defaults to 'el')
     const currentLang = lang || 'el';
@@ -32,14 +43,17 @@ export default function HousesSection({ dict, lang }) {
                     </div>
                     <div className="house-content-side">
                         <Reveal delay={0.2}>
-                            <h3 style={{ fontSize: '2.5rem', marginBottom: '20px', fontFamily: 'var(--font-heading)', color: '#005777' }}>
+                            <h3 style={{ fontSize: '2.5rem', marginBottom: '10px', fontFamily: 'var(--font-heading)', color: '#005777' }}>
                                 {tNav.chris}
                             </h3>
+
+                            {/* GOLD BAR */}
+                            <GoldBar />
+
                             <p style={{ color: '#666', marginBottom: '30px', lineHeight: '1.8' }}>
                                 {tHome.chris_desc}
                             </p>
 
-                            {/* LINK TO AVAILABILITY PAGE */}
                             <Link href={`/${currentLang}/availability`} className="btn btn-primary">
                                 {tHome.check_btn}
                             </Link>
@@ -56,14 +70,17 @@ export default function HousesSection({ dict, lang }) {
                     </div>
                     <div className="house-content-side">
                         <Reveal delay={0.2}>
-                            <h3 style={{ fontSize: '2.5rem', marginBottom: '20px', fontFamily: 'var(--font-heading)', color: '#005777' }}>
+                            <h3 style={{ fontSize: '2.5rem', marginBottom: '10px', fontFamily: 'var(--font-heading)', color: '#005777' }}>
                                 {tNav.afroditi}
                             </h3>
+
+                            {/* GOLD BAR */}
+                            <GoldBar />
+
                             <p style={{ color: '#666', marginBottom: '30px', lineHeight: '1.8' }}>
                                 {tHome.afroditi_desc}
                             </p>
 
-                            {/* LINK TO AVAILABILITY PAGE */}
                             <Link href={`/${currentLang}/availability`} className="btn btn-primary">
                                 {tHome.check_btn}
                             </Link>

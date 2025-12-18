@@ -22,7 +22,7 @@ export default async function LocationPage({ params }) {
             <HouseHero
                 title={dict.location.hero_title}
                 subtitle={dict.location.hero_sub}
-                img="/assets/images/loutra resort b2-331-2000x1333.jpeg"
+                img="/assets/images/loutra.jpg"
             />
 
             {/* 1. INTRO: THE VILLAGE */}
@@ -46,7 +46,7 @@ export default async function LocationPage({ params }) {
                         </div>
                         <div className="tall-image-container">
                             <Reveal delay={0.3} height="100%">
-                                <img src="/assets/images/loutra resort b2-2-1500x1500.jpeg" alt="Loutra" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <img src="/assets/images/loutra-alley.jpg" alt="Loutra" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             </Reveal>
                         </div>
                     </div>

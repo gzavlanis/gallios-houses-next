@@ -50,16 +50,88 @@ img { max-width: 100%; display: block; }
 
 /* Desktop Menu */
 .desktop-menu { display: flex; align-items: center; gap: 30px; }
-.nav-link { font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; color: white; }
-.nav-link.dark { color: var(--primary) !important; }
+.nav-link {
+    position: relative;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    padding-bottom: 5px; /* Space for the underline */
+    text-decoration: none;
+}
+
+/* Colors based on scroll state */
+.nav-link.white { color: white; }
+.nav-link.dark { color: var(--primary); }
+
+/* Hover State: Turn text Gold */
+.nav-link:hover {
+    color: var(--secondary) !important; /* #cba135 */
+}
+
+/* The Gold Line Logic */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary); /* Gold Color */
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth Easing */
+}
+
+/* Expand line on hover */
+.nav-link:hover::after {
+    width: 100%;
+}
 .book-btn { padding: 12px 25px; font-size: 12px; white-space: nowrap; }
 
 /* Dropdown */
 .dropdown-wrapper { position: relative; height: 100%; display: flex; align-items: center; }
-.dropdown-content { position: absolute; top: 100%; left: -15px; background: white; min-width: 180px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 4px; padding: 10px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; }
-.dropdown-wrapper:hover .dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
-.dropdown-content a { display: block; padding: 10px 20px; color: #555; font-size: 14px; transition: background 0.2s; }
-.dropdown-content a:hover { background: #f9f9f9; color: var(--primary); }
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: -15px;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    overflow: hidden; /* Keeps the border inside corners */
+}
+
+.dropdown-wrapper:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* The Links Inside Dropdown */
+.dropdown-content a {
+    display: block;
+    padding: 12px 20px;
+    color: #555;
+    font-size: 14px;
+    transition: all 0.2s ease;
+
+    /* PREPARE FOR THE GOLD BORDER */
+    border-right: 4px solid transparent; /* Invisible border to prevent jumping */
+}
+
+.dropdown-content a:hover {
+    background: #f9f9f9;
+    color: var(--primary);
+
+    /* REVEAL THE GOLD BORDER */
+    border-right-color: var(--secondary);
+}
 
 /* Mobile */
 .mobile-toggle { display: none; margin-left: auto; align-items: center; gap: 15px; }

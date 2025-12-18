@@ -44,7 +44,7 @@ export default async function Home({ params }) {
 
             <HousesSection dict={dict} lang={lang} />
 
-            <DiscoverSection dict={dict} lang={lang} /> {/* Don't forget to import this if you removed it, otherwise delete this line */}
+            <DiscoverSection dict={dict} lang={lang} />
 
             <InfoIcons dict={dict} />
 

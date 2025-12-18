@@ -4,6 +4,16 @@ import Link from 'next/link';
 import Reveal from './Reveal';
 import { useScroll, useTransform, motion } from 'framer-motion';
 
+// 1. Define GoldBar outside (Centered version)
+const GoldBar = () => (
+    <div style={{
+        width: '60px',
+        height: '3px',
+        background: '#cba135',
+        margin: '0 auto 30px' // Centers it horizontally
+    }}></div>
+);
+
 export default function DiscoverSection({ dict, lang }) {
     const currentLang = lang || 'el';
     const t = dict?.home?.features || {};
@@ -47,11 +57,14 @@ export default function DiscoverSection({ dict, lang }) {
                     <h2 style={{
                         fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                         fontFamily: 'var(--font-heading)',
-                        margin: '0 0 30px',
+                        margin: '0 0 20px', // Reduced margin slightly to fit bar
                         lineHeight: '1.1'
                     }}>
                         Discover Loutra Village
                     </h2>
+
+                    {/* GOLD BAR ADDED HERE */}
+                    <GoldBar />
 
                     <p style={{
                         maxWidth: '600px',
