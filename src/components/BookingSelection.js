@@ -37,7 +37,7 @@ export default function BookingSelection({ dict }) {
                             <a href="https://www.airbnb.gr/rooms/36375065" target="_blank" rel="noopener noreferrer" className="platform-btn btn-airbnb">
                                 <Icon name="airbnb" size={20} /> Airbnb
                             </a>
-                            <a href="https://www.booking.com/hotel/gr/chris-house-loutra.html" target="_blank" rel="noopener noreferrer" className="platform-btn btn-booking">
+                            <a href="https://www.booking.com/hotel/gr/chris-house-rethymno.en.html" target="_blank" rel="noopener noreferrer" className="platform-btn btn-booking">
                                 <span style={{ fontWeight: '900', fontSize: '16px' }}>B.</span> Booking
                             </a>
                         </div>
@@ -73,7 +73,7 @@ export default function BookingSelection({ dict }) {
                             <a href="https://www.airbnb.com/rooms/682514460285127836" target="_blank" rel="noopener noreferrer" className="platform-btn btn-airbnb">
                                 <Icon name="airbnb" size={20} /> Airbnb
                             </a>
-                            <a href="https://www.booking.com/hotel/gr/afroditi-suite-loutra.html" target="_blank" rel="noopener noreferrer" className="platform-btn btn-booking">
+                            <a href="https://www.booking.com/hotel/gr/afroditi-suite-in-loutra-rethymnon.en-gb.html" target="_blank" rel="noopener noreferrer" className="platform-btn btn-booking">
                                 <span style={{ fontWeight: '900', fontSize: '16px' }}>B.</span> Booking
                             </a>
                         </div>

@@ -65,7 +65,7 @@ export default function Footer({ dict }) {
                             </a>
 
                             {/* Booking.com */}
-                            <a href="https://www.booking.com/hotel/gr/chris-house-loutra.html" target="_blank" style={socialBtnStyle}>
+                            <a href="https://www.booking.com/hotel/gr/chris-house-rethymno.en.html" target="_blank" style={socialBtnStyle}>
                                 <Icon name="booking" size={20} color="white" />
                             </a>
                         </div>
