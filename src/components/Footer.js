@@ -50,12 +50,12 @@ export default function Footer({ dict }) {
 
                         <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                             {/* Facebook */}
-                            <a href="#" target="_blank" style={socialBtnStyle}>
+                            <a href="https://www.facebook.com/gallioshouses" target="_blank" style={socialBtnStyle}>
                                 <Icon name="facebook" size={20} color="white" />
                             </a>
 
                             {/* Instagram */}
-                            <a href="#" target="_blank" style={socialBtnStyle}>
+                            <a href="https://www.instagram.com/gallioshouses/" target="_blank" style={socialBtnStyle}>
                                 <Icon name="instagram" size={20} color="white" />
                             </a>
 
