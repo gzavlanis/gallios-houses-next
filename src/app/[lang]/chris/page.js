@@ -92,7 +92,7 @@ export default async function ChrisHouse({ params }) {
                     </Reveal>
 
                     <div className="gallery-grid">
-                        <GalleryImg span={1} src="/assets/images/a3-17-2000x1333.webp" alt="Patio" delay={0} />
+                        <GalleryImg span={1} src="/assets/images/a3-17-2000x1333.jpeg" alt="Patio" delay={0} />
                         <GalleryImg span={2} src="/assets/images/a3-19-1080x720.jpeg" alt="Garden Wide" delay={0.1} />
                         <GalleryImg span={3} src="/assets/images/loutra resort b2-2-1500x1500.jpeg" alt="Pool Area" delay={0.2} />
                     </div>

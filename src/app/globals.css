@@ -565,3 +565,59 @@ img { max-width: 100%; display: block; }
     .booking-card-content { padding: 30px; }
     .platform-btn-group { grid-template-columns: 1fr; }
 }
+
+/* --- 16. CONTACT SECTION --- */
+.contact-layout {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-card-wrapper {
+    flex: 0 0 45%;
+    background: white;
+    padding: 60px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    z-index: 10;
+    position: relative;
+}
+
+.contact-map-wrapper {
+    flex: 0 0 65%;
+    height: 600px;
+    margin-left: -10%; /* The Desktop Overlap */
+    z-index: 1;
+    position: relative;
+}
+
+.contact-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-input:focus {
+    border-bottom-color: var(--secondary);
+}
+
+/* RESPONSIVE: Fix for Mobile */
+@media (max-width: 992px) {
+    .contact-layout {
+        flex-direction: column; /* Stack vertically */
+    }
+    .contact-card-wrapper {
+        flex: 0 0 100%;
+        width: 100%;
+        padding: 40px 20px;
+        margin-bottom: 0;
+    }
+    .contact-map-wrapper {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 400px; /* Shorter map on mobile */
+        margin-left: 0; /* Remove overlap */
+    }
+}

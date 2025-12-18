@@ -1,7 +1,11 @@
 "use client";
-import { useState } from 'react';
+
+import Link from "next/link";
+import {usePathname} from "next/navigation";
 
 export default function AvailabilityBar({ dict }) {
+    const pathname = usePathname();
+    const lang = pathname?.split('/')[1] || 'el';
     const t = dict?.booking?.labels || {
         arrival: "Check In", departure: "Check Out", adults: "Guests", btn: "CHECK"
     };
@@ -26,9 +30,7 @@ export default function AvailabilityBar({ dict }) {
                     <option>6 Adults</option>
                 </select>
             </div>
-            <button className="btn btn-primary" style={{ height: '45px', padding: '0 30px' }}>
-                {t.btn}
-            </button>
+            <Link href={`/${lang}/availability`} className="btn btn-primary">{t.btn}</Link>
         </div>
     );
 }

@@ -7,12 +7,12 @@ export async function POST(request) {
 
         // 1. Configure the Transporter (Your Email Server)
         const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: process.env.SMTP_PORT,
-            secure: true, // true for 465, false for other ports
+            host: "mail.gallioshouses.gr", // Your SMTP server
+            port: 465, // Standard secure SMTP port
+            secure: true, // Use SSL
             auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS,
+                user: "info@gallioshouses.gr",
+                pass: "password" // <--- REPLACE THIS!
             },
         });
 

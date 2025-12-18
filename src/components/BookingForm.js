@@ -17,8 +17,8 @@ export default function BookingForm({ dict }) {
         setStatus('sending');
 
         try {
-            // We send the data to the PHP file in your public folder
-            const res = await fetch('/sendmail.php', {
+            // We send the data to the API file in your public folder
+            const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

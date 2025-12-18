@@ -8,7 +8,7 @@ export default function Hero({ title, subtitle, dict }) {
             className="hero-section"
             style={{
                 // Using the Wide Landscape image
-                backgroundImage: "url('/assets/images/collage2-2000x1050.jpeg')"
+                backgroundImage: "url('/assets/images/collage-3-2000x1414.jpeg')"
             }}
         >
             {/* Overlay is now z-index 1 in CSS */}

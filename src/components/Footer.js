@@ -91,7 +91,7 @@ export default function Footer({ dict }) {
                 </div>
 
                 <div style={{ marginTop: '80px', paddingTop: '30px', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', opacity: 0.6, fontSize: '13px' }}>
-                    <p>&copy; {currentYear} Gallios Houses. All rights reserved.</p>
+                    <p>&copy; {currentYear} Gallios Houses - All rights reserved | Powered by NextJS</p>
                 </div>
             </div>
         </footer>
