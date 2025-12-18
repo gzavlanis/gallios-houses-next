@@ -400,3 +400,96 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
     transform: translateY(-3px) scale(1.05);
 }
+
+/* --- NEW AVAILABILITY PAGE STYLES --- */
+
+/* 1. The House Booking Card */
+.booking-card-premium {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    margin-bottom: 40px;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.booking-card-premium:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+.booking-card-img {
+    flex: 0 0 45%;
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-card-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 2. Platform Buttons */
+.platform-btn-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.platform-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-airbnb {
+    background: #FF5A5F;
+    color: white;
+}
+.btn-airbnb:hover {
+    background: white;
+    color: #FF5A5F;
+    border-color: #FF5A5F;
+}
+
+.btn-booking {
+    background: #003580;
+    color: white;
+}
+.btn-booking:hover {
+    background: white;
+    color: #003580;
+    border-color: #003580;
+}
+
+/* 3. Form & Layout Polish */
+.form-container {
+    background: white;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--secondary); /* Gold accent on top */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 992px) {
+    .booking-card-premium { flex-direction: column; }
+    .booking-card-img { height: 250px; width: 100%; }
+    .booking-card-content { padding: 30px; }
+    .platform-btn-group { grid-template-columns: 1fr; }
+}

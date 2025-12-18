@@ -12,35 +12,54 @@ export default async function AvailabilityPage({ params }) {
     const dict = await getDictionary(lang);
 
     return (
-        <main style={{ background: 'white' }}>
+        <main style={{ background: '#fdfbf7' }}> {/* Off-white background for the whole page */}
             <Navbar dict={dict} />
-            <HouseHero title={dict.booking.hero_title} subtitle={dict.booking.hero_sub} img="/assets/images/loutra resort b2-2-1500x1500.jpeg" />
+
+            <HouseHero
+                title={dict.booking.hero_title}
+                subtitle={dict.booking.hero_sub}
+                img="/assets/images/loutra resort b2-2-1500x1500.jpeg"
+            />
 
             <section className="section-padding">
                 <div className="container">
+
+                    {/* Header */}
                     <Reveal>
                         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-                            <h2 style={{ fontSize: '2.5rem', color: '#005777', fontFamily: 'var(--font-heading)' }}>{dict.booking.gateway_title}</h2>
-                            <p style={{ color: '#666', maxWidth: '600px', margin: '15px auto 0' }}>{dict.booking.gateway_text}</p>
+                            <h2 style={{ fontSize: '2.5rem', color: '#005777', fontFamily: 'var(--font-heading)' }}>
+                                {dict.booking.gateway_title}
+                            </h2>
+                            <p style={{ color: '#666', maxWidth: '600px', margin: '15px auto 0', fontSize: '1.1rem' }}>
+                                {dict.booking.gateway_text}
+                            </p>
                         </div>
                     </Reveal>
-                    <div className="booking-layout">
-                        <div className="booking-left"><Reveal delay={0.2}><BookingSelection dict={dict} /></Reveal></div>
-                        <div className="booking-right"><Reveal delay={0.4}><BookingPerks dict={dict} /></Reveal></div>
-                    </div>
-                </div>
-            </section>
 
-            <section style={{ background: '#fdfbf7', padding: '100px 0' }}>
-                <div className="container">
-                    <Reveal>
-                        <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-                            <h3 style={{ fontSize: '2.5rem', color: '#005777', fontFamily: 'var(--font-heading)' }}>{dict.booking.form_title}</h3>
-                            <p style={{ color: '#888' }}>{dict.booking.form_text}</p>
+                    {/* Main Layout: Cards Left, Form Right */}
+                    <div className="booking-layout" style={{ alignItems: 'start' }}>
+
+                        {/* Left: House Cards */}
+                        <div className="booking-left">
+                            <BookingSelection dict={dict} />
                         </div>
-                    </Reveal>
-                    <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-                        <Reveal delay={0.2}><BookingForm dict={dict} /></Reveal>
+
+                        {/* Right: Sticky Form */}
+                        <div className="booking-right" style={{ position: 'sticky', top: '120px' }}>
+                            <Reveal delay={0.3}>
+                                <BookingForm dict={dict} />
+                            </Reveal>
+
+                            <Reveal delay={0.4}>
+                                <BookingPerks dict={dict} />
+                            </Reveal>
+
+                            {/* Simple Help Text below form */}
+                            <div style={{ marginTop: '30px', textAlign: 'center', color: '#888', fontSize: '0.9rem' }}>
+                                <p>Need help? Call us at <a href="tel:+306971234567" style={{ color: '#005777', fontWeight: 'bold' }}>+30 697 123 4567</a></p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>

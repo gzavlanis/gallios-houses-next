@@ -45,7 +45,11 @@ export default function Icon({ name, size = 24, color = "currentColor", classNam
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
             </g>
         ),
-        airbnb: <path d="M12 3C6.5 3 2 8 2 13c0 3.5 2.5 6.5 6 8l4-2 4 2c3.5-1.5 6-4.5 6-8 0-5-4.5-10-10-10z"/>,
+        // ... inside the icons object ...
+        airbnb: <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm4.5-5.5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z" fill={color} stroke="none" />,
+
+        // Simple "B" icon for Booking.com
+        booking: <path d="M5 3h7c2.21 0 4 1.79 4 4 0 1.83-1.22 3.36-2.9 3.85C15.18 11.4 17 13.3 17 16c0 2.76-2.24 5-5 5H5V3zm2 2v5h5c1.38 0 2.5-1.12 2.5-2.5S13.38 5 12 5H7zm0 7v6h5c1.38 0 2.5-1.12 2.5-2.5S13.38 12 12 12H7z" fill={color} stroke="none" />,
 
         flag_el: (
             <g>
