@@ -1,20 +1,5 @@
-import '../globals.css'; // Adjust path if needed (go up 2 levels)
-import { Lato, Playfair_Display } from 'next/font/google';
-import {getDictionary} from "@/dictionaries/get-dictionary";
+import { getDictionary } from '@/dictionaries/get-dictionary';
 
-const lato = Lato({
-    subsets: ['latin'],
-    weight: ['300', '400', '700'],
-    variable: '--font-body'
-});
-
-const playfair = Playfair_Display({
-    subsets: ['latin'],
-    weight: ['400', '600', '700'],
-    variable: '--font-heading'
-});
-
-// --- DYNAMIC METADATA GENERATION ---
 export async function generateMetadata({ params }) {
     const { lang } = await params;
     const dict = await getDictionary(lang);
@@ -23,12 +8,6 @@ export async function generateMetadata({ params }) {
     return {
         title: dict.meta.title,
         description: dict.meta.description,
-        // The icons usually stay in the Root Layout, but can be here too just in case
-        icons: {
-            icon: '/icon.png',
-            shortcut: '/icon.png',
-            apple: '/icon.png',
-        },
         openGraph: {
             title: dict.meta.title,
             description: dict.meta.description,
@@ -50,16 +29,9 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export default async function LanguageLayout({ children, params }) {
-    const { lang } = await params;
-
+export default function LanguageLayout({ children }) {
     return (
-        // We do NOT need <html> here if it's already in the Root Layout.
-        // But usually, [lang] layout sets the language attribute on a div or main.
-        // Since you are using Root Layout for html/body, just return children or wrapper.
-
-        <div className={`${lato.variable} ${playfair.variable} app-wrapper`}>
-            {/* Add Schema Script here if you want it on every page */}
+        <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -83,6 +55,6 @@ export default async function LanguageLayout({ children, params }) {
                 }}
             />
             {children}
-        </div>
+        </>
     );
 };
