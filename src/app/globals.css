@@ -282,7 +282,7 @@ img { max-width: 100%; display: block; }
 .shape-white-blob { bottom: -150px; right: -50px; width: 500px; height: 500px; background: white; opacity: 0.05; }
 .geo-watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.03; pointer-events: none; font-size: 15vw; font-weight: 800; color: white; }
 
-/* --- 13. AVAILABILITY BAR (FIXED FOR MOBILE) --- */
+/* --- 13. AVAILABILITY BAR (MOBILE FIXED V2) --- */
 .glass-bar {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(15px);
@@ -309,6 +309,7 @@ img { max-width: 100%; display: block; }
     margin-bottom: 5px;
 }
 
+/* Default Desktop Input Style */
 .search-input {
     background: transparent;
     border: none;
@@ -318,7 +319,7 @@ img { max-width: 100%; display: block; }
     font-size: 15px;
     font-weight: 600;
     padding: 10px 0;
-    width: 160px; /* Desktop width */
+    width: 160px; /* Fixed width for desktop alignment */
     outline: none;
     cursor: pointer;
     transition: all 0.3s;
@@ -327,54 +328,62 @@ img { max-width: 100%; display: block; }
 
 .search-input:focus { border-bottom-color: var(--secondary); }
 
-/* --- MOBILE & TABLET ADJUSTMENTS --- */
+/* --- MOBILE & TABLET FIXES (< 992px) --- */
 @media (max-width: 992px) {
-    /* 1. Push the Hero Text UP so the bar doesn't cover it */
+    /* 1. Lift the Hero text so the bar has space */
     .hero-content {
-        transform: translateY(-60px);
+        transform: translateY(-80px);
         padding: 0 15px;
     }
 
-    .hero-title {
-        font-size: 2.5rem; /* Slightly smaller title to save space */
-    }
-
-    /* 2. Fix the Bar Container Positioning */
+    /* 2. Center and safe-zone the bar container */
     .hero-bar-container {
-        bottom: 20px; /* Move bar closer to bottom */
-        padding: 0 15px; /* Ensure gap on left/right edges */
+        bottom: 20px;
         width: 100%;
+        padding: 0 20px; /* Safety padding from screen edges */
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
     }
 
-    /* 3. Fix the Bar Width & Layout */
+    /* 3. The Grid Layout */
     .glass-bar {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Two dates side-by-side */
-        gap: 15px;
-        width: 100%;
-        max-width: 100%; /* FIX: Removes the 400px limit causing overflow */
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.95); /* Better readability */
+        grid-template-columns: 1fr 1fr; /* Arrival | Departure */
+        gap: 20px;
+
+        width: 100%; /* Fill the container */
+        max-width: 100%;
+        margin: 0;
+        padding: 25px;
+        background: white; /* Solid white for clean look */
     }
 
-    /* 4. Button spans full width at the bottom */
+    /* 4. FORCE INPUTS TO FILL WIDTH (Fixes short underlines) */
+    .search-input {
+        width: 100% !important;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    /* 5. MAKE ADULTS FIELD SPAN FULL WIDTH */
+    /* Assuming Adults is the 3rd item (Arrival, Departure, Adults, Button) */
+    .search-field:nth-of-type(3) {
+        grid-column: span 2;
+    }
+
+    /* 6. MAKE BUTTON SPAN FULL WIDTH */
     .glass-bar .btn {
         grid-column: span 2;
         width: 100%;
         margin-top: 5px;
     }
-
-    /* 5. FIX THE CUT-OFF UNDERLINE */
-    .search-input {
-        width: 100%;
-        box-sizing: border-box; /* Crucial: Prevents padding from breaking width */
-    }
 }
 
-/* Extra Small Screens (e.g. iPhone SE) */
+/* Extra Small Screens */
 @media (max-width: 380px) {
-    .hero-title { font-size: 2rem; }
-    .glass-bar { padding: 15px; gap: 10px; }
+    .glass-bar { padding: 15px; gap: 15px; }
+    .hero-content { transform: translateY(-60px); }
 }
 
 /* --- 14. SPLIT LAYOUT --- */
