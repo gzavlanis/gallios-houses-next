@@ -282,7 +282,7 @@ img { max-width: 100%; display: block; }
 .shape-white-blob { bottom: -150px; right: -50px; width: 500px; height: 500px; background: white; opacity: 0.05; }
 .geo-watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.03; pointer-events: none; font-size: 15vw; font-weight: 800; color: white; }
 
-/* --- 13. AVAILABILITY BAR (MOBILE FIXED V2) --- */
+/* --- 13. AVAILABILITY BAR (MOBILE VERTICAL STACK) --- */
 .glass-bar {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(15px);
@@ -319,7 +319,7 @@ img { max-width: 100%; display: block; }
     font-size: 15px;
     font-weight: 600;
     padding: 10px 0;
-    width: 160px; /* Fixed width for desktop alignment */
+    width: 160px; /* Fixed width for desktop */
     outline: none;
     cursor: pointer;
     transition: all 0.3s;
@@ -330,60 +330,54 @@ img { max-width: 100%; display: block; }
 
 /* --- MOBILE & TABLET FIXES (< 992px) --- */
 @media (max-width: 992px) {
-    /* 1. Lift the Hero text so the bar has space */
+    /* 1. Lift the Hero text high enough */
     .hero-content {
-        transform: translateY(-80px);
-        padding: 0 15px;
+        transform: translateY(-100px) !important;
+        padding: 0 20px;
     }
 
-    /* 2. Center and safe-zone the bar container */
+    /* 2. Position the container at the bottom */
     .hero-bar-container {
-        bottom: 20px;
+        bottom: 0 !important;
+        padding: 0 0 20px 0;
         width: 100%;
-        padding: 0 20px; /* Safety padding from screen edges */
-        box-sizing: border-box;
         display: flex;
         justify-content: center;
     }
 
-    /* 3. The Grid Layout */
+    /* 3. The Vertical Stack Layout (The Fix) */
     .glass-bar {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Arrival | Departure */
-        gap: 20px;
+        display: flex !important;
+        flex-direction: column !important; /* Stack items 1-by-1 */
+        gap: 15px !important;
 
-        width: 100%; /* Fill the container */
-        max-width: 100%;
-        margin: 0;
-        padding: 25px;
-        background: white; /* Solid white for clean look */
+        width: 90% !important; /* Takes up 90% of screen width */
+        max-width: 400px; /* Cap width for tablets */
+        margin: 0 auto;
+        padding: 25px !important;
+        background: white !important; /* Solid white background */
+        box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
     }
 
-    /* 4. FORCE INPUTS TO FILL WIDTH (Fixes short underlines) */
+    /* 4. Force every field to be full width */
+    .search-field {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* 5. Force inputs to be full width */
     .search-input {
         width: 100% !important;
-        min-width: 0;
-        box-sizing: border-box;
+        box-sizing: border-box; /* Critical for borders */
     }
 
-    /* 5. MAKE ADULTS FIELD SPAN FULL WIDTH */
-    /* Assuming Adults is the 3rd item (Arrival, Departure, Adults, Button) */
-    .search-field:nth-of-type(3) {
-        grid-column: span 2;
-    }
-
-    /* 6. MAKE BUTTON SPAN FULL WIDTH */
+    /* 6. Force the Button to be full width */
     .glass-bar .btn {
-        grid-column: span 2;
-        width: 100%;
+        width: 100% !important;
+        text-align: center;
         margin-top: 5px;
+        grid-column: auto; /* Reset grid properties */
     }
-}
-
-/* Extra Small Screens */
-@media (max-width: 380px) {
-    .glass-bar { padding: 15px; gap: 15px; }
-    .hero-content { transform: translateY(-60px); }
 }
 
 /* --- 14. SPLIT LAYOUT --- */
