@@ -1,11 +1,11 @@
 import {getDictionary} from "@/dictionaries/get-dictionary";
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
-import ContactSection from '../../../components/ContactSection';
-import HouseHero from '../../../components/HouseHero';
-import Icon from '../../../components/Icons';
-import Testimonials from '../../../components/Testimonials';
-import Reveal from '../../../components/Reveal';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import ContactSection from '@/components/ContactSection';
+import HouseHero from '@/components/HouseHero';
+import Icon from '@/components/Icons';
+import Testimonials from '@/components/Testimonials';
+import Reveal from '@/components/Reveal';
 import Link from 'next/link';
 
 export default async function AfroditiSuite({ params }) {
@@ -28,7 +28,7 @@ export default async function AfroditiSuite({ params }) {
                                 <h2 style={{ fontSize: '3rem', color: '#005777', marginTop: '15px', marginBottom: '30px', fontFamily: 'var(--font-heading)' }}>{dict.afroditi.narrative_title}</h2>
                             </Reveal>
                             <Reveal delay={0.1}><p style={{ color: '#666', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '20px' }}>{dict.afroditi.narrative_text_1}</p></Reveal>
-                            <Reveal delay={0.2}><div className="quote-block">"{dict.afroditi.quote}"</div></Reveal>
+                            <Reveal delay={0.2}><div className="quote-block">&#34;{dict.afroditi.quote}&#34;</div></Reveal>
                             <Reveal delay={0.3}><p style={{ color: '#666', fontSize: '1.1rem', lineHeight: '1.8' }}>{dict.afroditi.narrative_text_2}</p></Reveal>
                         </div>
                         <div className="tall-image-container">

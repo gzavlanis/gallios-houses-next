@@ -1,11 +1,11 @@
 import {getDictionary} from "@/dictionaries/get-dictionary";
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
-import HouseHero from '../../../components/HouseHero';
-import BookingSelection from '../../../components/BookingSelection';
-import BookingPerks from '../../../components/BookingPerks';
-import BookingForm from '../../../components/BookingForm';
-import Reveal from '../../../components/Reveal';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import HouseHero from '@/components/HouseHero';
+import BookingSelection from '@/components/BookingSelection';
+import BookingPerks from '@/components/BookingPerks';
+import BookingForm from '@/components/BookingForm';
+import Reveal from '@/components/Reveal';
 
 export default async function AvailabilityPage({ params }) {
     const { lang } = await params;

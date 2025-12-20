@@ -1,11 +1,11 @@
 import {getDictionary} from "@/dictionaries/get-dictionary";
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
-import ContactSection from '../../../components/ContactSection';
-import HouseHero from '../../../components/HouseHero';
-import PlaceCard from '../../../components/PlaceCard';
-import Reveal from '../../../components/Reveal';
-import Icon from '../../../components/Icons';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import ContactSection from '@/components/ContactSection';
+import HouseHero from '@/components/HouseHero';
+import PlaceCard from '@/components/PlaceCard';
+import Reveal from '@/components/Reveal';
+import Icon from '@/components/Icons';
 import AttractionCard from "@/components/AttractionCard";
 
 export default async function LocationPage({ params }) {
