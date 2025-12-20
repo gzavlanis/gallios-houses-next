@@ -1,5 +1,6 @@
 import './globals.css';
 import { Lato, Playfair_Display } from 'next/font/google';
+import ChatWidget from "@/components/ChatWidget";
 
 const lato = Lato({
     subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         <html lang="en" suppressHydrationWarning>
         <body className={`${lato.variable} ${playfair.variable}`}>
         {children}
+        <ChatWidget />
         </body>
         </html>
     );
