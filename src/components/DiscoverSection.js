@@ -37,7 +37,7 @@ export default function DiscoverSection({ dict, lang }) {
 
             {/* Parallax Watermark */}
             <motion.h1 style={{ y }} className="geo-watermark">
-                LOUTRA
+                GALLIOS HOUSES
             </motion.h1>
 
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
