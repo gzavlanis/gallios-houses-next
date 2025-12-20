@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node server.js"
+    "start": "node server.js",
+    "lint": "next lint"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.7.0",
