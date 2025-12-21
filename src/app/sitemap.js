@@ -1,11 +1,21 @@
 export default function sitemap() {
     const baseUrl = 'https://gallioshouses.gr';
-    const languages = ['en', 'el', 'fr', 'de', 'it'];
-    const routes = ['', '/chris', '/afroditi', '/location', '/availability'];
-    let sitemapEntries = [];
-    languages.forEach(lang => {
-        routes.forEach(route => {
-            sitemapEntries.push({
+
+    // These are your main pages
+    const routes = [
+        '',              // Homepage
+        '/availability',
+        '/contact',
+    ];
+
+    // Your supported languages
+    const languages = ['el', 'en', 'fr', 'de', 'it'];
+    const urls = [];
+
+    // This loop automatically creates 1 URL for every language + page combination
+    languages.forEach((lang) => {
+        routes.forEach((route) => {
+            urls.push({
                 url: `${baseUrl}/${lang}${route}`,
                 lastModified: new Date(),
                 changeFrequency: 'weekly',
@@ -13,5 +23,6 @@ export default function sitemap() {
             });
         });
     });
-    return sitemapEntries;
+
+    return urls;
 }
