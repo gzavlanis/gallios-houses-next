@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import HouseHero from '@/components/HouseHero';
 import BookingSelection from '@/components/BookingSelection';
+import LiveAvailability from '@/components/LiveAvailability';
 import BookingPerks from '@/components/BookingPerks';
 import BookingForm from '@/components/BookingForm';
 import Reveal from '@/components/Reveal';
@@ -46,6 +47,10 @@ export default async function AvailabilityPage({ params }) {
 
                         {/* Right: Sticky Form */}
                         <div className="booking-right" style={{ position: 'sticky', top: '120px' }}>
+                            <Reveal delay={0.2}>
+                                <LiveAvailability />
+                            </Reveal>
+
                             <Reveal delay={0.3}>
                                 <BookingForm dict={dict} />
                             </Reveal>
