@@ -1,6 +1,7 @@
 import './globals.css';
 import { Lato, Playfair_Display } from 'next/font/google';
 import ChatWidget from "@/components/ChatWidget";
+import StickyBookBar from "@/components/StickyBookbar";
 
 const lato = Lato({
     subsets: ['latin'],
@@ -28,10 +29,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" suppressHydrationWarning>
-        <body className={`${lato.variable} ${playfair.variable}`}>
-        {children}
-        <ChatWidget />
-        </body>
+            <body className={`${lato.variable} ${playfair.variable}`}>
+                {children}
+                <StickyBookBar />
+                <ChatWidget />
+            </body>
         </html>
     );
 }

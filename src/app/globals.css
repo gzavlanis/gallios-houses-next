@@ -844,3 +844,73 @@ img { max-width: 100%; display: block; }
     .chat-btn { width: 55px; height: 55px; }
     .chat-icon-btn { width: 45px; height: 45px; }
 }
+
+/* --- 20. STICKY MOBILE BOOK BAR (FLOATING PILL VERSION) --- */
+.sticky-bar {
+    position: fixed;
+    bottom: 10px; /* MARGIN FROM BOTTOM */
+    left: 50%;    /* Center horizontally */
+    width: 90%;   /* MARGIN FROM SIDES (90% width) */
+    max-width: 400px; /* Limit width on larger phones */
+
+    background: white;
+    padding: 8px; /* SMALLER PADDING */
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+
+    z-index: 9998;
+    display: flex;
+    gap: 8px; /* Gap between buttons */
+
+    /* Animation: Slide up from bottom */
+    transform: translateX(-50%) translateY(150%);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sticky-bar.visible {
+    /* Slide into place (Center X, Bottom Y) */
+    transform: translateX(-50%) translateY(0);
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 30px; /* Round buttons to match the bar */
+    font-weight: 700;
+    text-decoration: none;
+
+    /* SMALLER SIZE */
+    font-size: 13px;
+    height: 40px; /* Reduced from 48px */
+}
+
+/* Call Button */
+.action-btn.call {
+    width: 40px; /* Make it a perfect circle icon only? Or Keep text? Let's keep text for clarity but small */
+    flex: 1;
+    background: #f3f4f6;
+    color: #333;
+    border: 1px solid #e5e7eb;
+}
+
+/* Book Button */
+.action-btn.book {
+    flex: 2;
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 87, 119, 0.25);
+}
+
+/* HIDE ON DESKTOP */
+@media (min-width: 769px) {
+    .sticky-bar { display: none !important; }
+}
+
+/* Adjust Chat Widget position */
+@media (max-width: 768px) {
+    .chat-widget {
+        bottom: 80px !important; /* Push chat bubble up above the floating bar */
+    }
+}
