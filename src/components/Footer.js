@@ -91,7 +91,7 @@ export default function Footer({ dict }) {
                 </div>
 
                 <div style={{ marginTop: '80px', paddingTop: '30px', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', opacity: 0.6, fontSize: '13px' }}>
-                    <p>&copy; {currentYear} Gallios Houses - All rights reserved | Powered by <b><a href={"https://nextjs.org/"} target="_blank" style={{ color: 'white', textDecoration: 'none' }}>NextJS</a></b></p>
+                    <p>&copy; {currentYear} Gallios Houses - All rights reserved | Powered by <b><a href={"https://nextjs.org/"} target="_blank" style={{ color: 'white', textDecoration: 'none' }}>Next.js</a></b></p>
                 </div>
             </div>
         </footer>
