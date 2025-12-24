@@ -5,7 +5,9 @@ export default function sitemap() {
     const routes = [
         '',              // Homepage
         '/availability',
-        '/contact',
+        '/location',
+        '/chris',
+        '/afroditi',
     ];
 
     // Your supported languages
@@ -18,7 +20,7 @@ export default function sitemap() {
             urls.push({
                 url: `${baseUrl}/${lang}${route}`,
                 lastModified: new Date(),
-                changeFrequency: 'weekly',
+                changeFrequency: 'daily',
                 priority: route === '' ? 1 : 0.8,
             });
         });
