@@ -12,10 +12,8 @@ export default function Preloader() {
             const hasSeen = typeof window !== 'undefined' ? sessionStorage.getItem('seenLoader') : null;
 
             if (hasSeen) {
-                // If seen, hide immediately (but now safely async)
                 setShow(false);
             } else {
-                // If NOT seen, start the full animation sequence
                 const animTimer = setTimeout(() => {
                     setFadeOut(true);
                     setTimeout(() => {
@@ -24,7 +22,6 @@ export default function Preloader() {
                     }, 800);
 
                 }, 2500); // Show for 2.5s
-
                 return () => clearTimeout(animTimer);
             }
         }, 10); // 10ms delay is enough to solve the error
