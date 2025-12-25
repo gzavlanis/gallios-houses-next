@@ -19,6 +19,11 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                source: '/location.html',
+                destination: '/location',
+                permanent: true,
+            },
+            {
                 source: '/availability.html',
                 destination: '/availability',
                 permanent: true,
